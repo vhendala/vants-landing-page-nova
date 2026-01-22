@@ -1,4 +1,4 @@
-import { Twitter, Linkedin, Github, Disc } from 'lucide-react';
+import { X, Linkedin, Github, Disc } from 'lucide-react';
 
 export const Footer = () => {
   return (
@@ -25,16 +25,16 @@ export const Footer = () => {
               The bridge between decentralized finance and real-world utility. Building the trust infrastructure for the next generation of fintech in Latin America.
             </p>
             <div className="flex gap-3 md:gap-4">
-              <a href="#" className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white transition-all">
-                <Twitter size={16} className="md:w-[18px] md:h-[18px]" />
+              <a href="https://x.com/vantsapp" target="_blank" rel="noopener noreferrer" className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white transition-all">
+                <X size={16} className="md:w-[18px] md:h-[18px]" />
               </a>
-              <a href="#" className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white transition-all">
+              <a href="https://linkedin.com/company/vantsapp" target="_blank" rel="noopener noreferrer" className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white transition-all">
                 <Linkedin size={16} className="md:w-[18px] md:h-[18px]" />
               </a>
-              <a href="#" className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white transition-all">
+              <a href="https://github.com/vantsapp" target="_blank" rel="noopener noreferrer" className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white transition-all">
                 <Github size={16} className="md:w-[18px] md:h-[18px]" />
               </a>
-              <a href="#" className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white transition-all">
+              <a href="https://discord.gg/vantsapp" target="_blank" rel="noopener noreferrer" className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white transition-all">
                 <Disc size={16} className="md:w-[18px] md:h-[18px]" />
               </a>
             </div>
