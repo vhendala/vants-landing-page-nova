@@ -83,6 +83,44 @@ Navigate to `http://localhost:5173` to see the landing page in action! 🎉
 | `pnpm build` | Build for production (outputs to `dist/`) |
 | `pnpm preview` | Preview production build locally |
 
+## 🌍 Deploy to Vercel
+
+This project is ready to deploy on [Vercel](https://vercel.com) with zero configuration!
+
+### Quick Deploy
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/vants-landing-page)
+
+### Manual Deploy
+
+1. **Install Vercel CLI** (optional)
+
+```bash
+npm i -g vercel
+```
+
+2. **Deploy**
+
+```bash
+vercel
+```
+
+3. **Production Deploy**
+
+```bash
+vercel --prod
+```
+
+### Via Vercel Dashboard
+
+1. Go to [vercel.com](https://vercel.com)
+2. Click "Add New Project"
+3. Import your Git repository
+4. Vercel will auto-detect the Vite framework
+5. Click "Deploy"
+
+That's it! Your site will be live in seconds. 🚀
+
 ## 📁 Project Structure
 
 ```
