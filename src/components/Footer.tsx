@@ -1,4 +1,4 @@
-import { X, Linkedin, Github, Disc } from 'lucide-react';
+import { X, Linkedin, Github, Disc, Instagram } from 'lucide-react';
 
 export const Footer = () => {
   return (
@@ -27,6 +27,9 @@ export const Footer = () => {
             <div className="flex gap-3 md:gap-4">
               <a href="https://x.com/vantsapp" target="_blank" rel="noopener noreferrer" className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white transition-all">
                 <X size={16} className="md:w-[18px] md:h-[18px]" />
+              </a>
+              <a href="https://instagram.com/vantsapp" target="_blank" rel="noopener noreferrer" className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white transition-all">
+                <Instagram size={16} className="md:w-[18px] md:h-[18px]" />
               </a>
               <a href="https://linkedin.com/company/vantsapp" target="_blank" rel="noopener noreferrer" className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white transition-all">
                 <Linkedin size={16} className="md:w-[18px] md:h-[18px]" />
