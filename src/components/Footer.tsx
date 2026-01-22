@@ -83,7 +83,7 @@ export const Footer = () => {
 
         <div className="pt-6 md:pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs md:text-sm text-muted-foreground text-center md:text-left">
-            © 2024 Vants Financial Technologies. All rights reserved.
+            © 2026 Vants. All rights reserved.
           </p>
           <div className="text-[10px] md:text-xs text-muted-foreground max-w-lg text-center md:text-right">
             Cryptocurrency assets are volatile and involve a high degree of risk. Vants is a technology provider, not a bank.
