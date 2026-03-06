@@ -1,4 +1,4 @@
-import { X, Linkedin, Github, Disc, Instagram } from 'lucide-react';
+import { X, Linkedin, Disc, Instagram, Youtube } from 'lucide-react';
 
 export const Footer = () => {
   return (
@@ -11,10 +11,10 @@ export const Footer = () => {
             <a href="/" className="flex items-center gap-3 w-fit">
               <div className="h-7 w-7 md:h-8 md:w-8 flex items-center justify-center">
                 <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                  <rect x="10" y="20" width="80" height="8" fill="white"/>
-                  <rect x="10" y="46" width="38" height="8" fill="white"/>
-                  <circle cx="75" cy="50" r="11" fill="white"/>
-                  <rect x="10" y="72" width="80" height="8" fill="white"/>
+                  <rect x="10" y="20" width="80" height="8" fill="white" />
+                  <rect x="10" y="46" width="38" height="8" fill="white" />
+                  <circle cx="75" cy="50" r="11" fill="white" />
+                  <rect x="10" y="72" width="80" height="8" fill="white" />
                 </svg>
               </div>
               <span className="text-xl md:text-2xl font-bold font-sans tracking-tight text-white">
@@ -31,11 +31,11 @@ export const Footer = () => {
               <a href="https://instagram.com/vantsapp" target="_blank" rel="noopener noreferrer" className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white transition-all">
                 <Instagram size={16} className="md:w-[18px] md:h-[18px]" />
               </a>
-              <a href="https://linkedin.com/company/vantsapp" target="_blank" rel="noopener noreferrer" className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white transition-all">
+              <a href="https://www.linkedin.com/company/vantsapp" target="_blank" rel="noopener noreferrer" className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white transition-all">
                 <Linkedin size={16} className="md:w-[18px] md:h-[18px]" />
               </a>
-              <a href="https://github.com/vantsapp" target="_blank" rel="noopener noreferrer" className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white transition-all">
-                <Github size={16} className="md:w-[18px] md:h-[18px]" />
+              <a href="https://youtube.com/@vantsapp" target="_blank" rel="noopener noreferrer" className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white transition-all">
+                <Youtube size={16} className="md:w-[18px] md:h-[18px]" />
               </a>
               <a href="https://discord.gg/vantsapp" target="_blank" rel="noopener noreferrer" className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white transition-all">
                 <Disc size={16} className="md:w-[18px] md:h-[18px]" />
@@ -60,7 +60,6 @@ export const Footer = () => {
               <li><a href="#" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors">Documentation</a></li>
               <li><a href="#" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors">API Reference</a></li>
               <li><a href="#" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors">Status</a></li>
-              <li><a href="#" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors">GitHub</a></li>
             </ul>
           </div>
 
