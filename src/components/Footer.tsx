@@ -1,4 +1,4 @@
-import { X, Linkedin, Disc, Instagram, Youtube } from 'lucide-react';
+import { X, Linkedin, Instagram, Youtube } from 'lucide-react';
 
 export const Footer = () => {
   return (
@@ -36,9 +36,6 @@ export const Footer = () => {
               </a>
               <a href="https://youtube.com/@vantsapp" target="_blank" rel="noopener noreferrer" className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white transition-all">
                 <Youtube size={16} className="md:w-[18px] md:h-[18px]" />
-              </a>
-              <a href="https://discord.gg/vantsapp" target="_blank" rel="noopener noreferrer" className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white transition-all">
-                <Disc size={16} className="md:w-[18px] md:h-[18px]" />
               </a>
             </div>
           </div>
