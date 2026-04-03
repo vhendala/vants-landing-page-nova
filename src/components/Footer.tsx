@@ -29,42 +29,15 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Links Columns */}
+          {/* Nav links — mirrors the header */}
           <div className="space-y-4 md:space-y-6">
-            <h4 className="text-white font-bold text-sm md:text-base">Products</h4>
+            <h4 className="text-white font-bold text-sm md:text-base">Navigation</h4>
             <ul className="space-y-3 md:space-y-4">
-              <li><a href="#" className="text-sm md:text-base text-slate-400 hover:text-[#6851FF] transition-colors">High-Yield Accounts</a></li>
-              <li><a href="#" className="text-sm md:text-base text-slate-400 hover:text-[#6851FF] transition-colors">Pay</a></li>
-              <li><a href="#" className="text-sm md:text-base text-slate-400 hover:text-[#6851FF] transition-colors">Earn</a></li>
-              <li><a href="#" className="text-sm md:text-base text-slate-400 hover:text-[#6851FF] transition-colors">Vants Card</a></li>
-            </ul>
-          </div>
-
-          <div className="space-y-4 md:space-y-6">
-            <h4 className="text-white font-bold text-sm md:text-base">Company</h4>
-            <ul className="space-y-3 md:space-y-4">
-              <li><a href="#team" className="text-sm md:text-base text-slate-400 hover:text-[#6851FF] transition-colors">About</a></li>
-              <li><a href="#" className="text-sm md:text-base text-slate-400 hover:text-[#6851FF] transition-colors">Careers</a></li>
-              <li><a href="#" className="text-sm md:text-base text-slate-400 hover:text-[#6851FF] transition-colors">Press</a></li>
-              <li><a href="#" className="text-sm md:text-base text-slate-400 hover:text-[#6851FF] transition-colors">Contact</a></li>
-            </ul>
-          </div>
-
-          <div className="space-y-4 md:space-y-6">
-            <h4 className="text-white font-bold text-sm md:text-base">Support</h4>
-            <ul className="space-y-3 md:space-y-4">
-              <li><a href="#" className="text-sm md:text-base text-slate-400 hover:text-[#6851FF] transition-colors">Help Center</a></li>
-              <li><a href="#" className="text-sm md:text-base text-slate-400 hover:text-[#6851FF] transition-colors">Status</a></li>
-              <li><a href="#" className="text-sm md:text-base text-slate-400 hover:text-[#6851FF] transition-colors">Contact</a></li>
-            </ul>
-          </div>
-
-          <div className="space-y-4 md:space-y-6">
-            <h4 className="text-white font-bold text-sm md:text-base">Legal</h4>
-            <ul className="space-y-3 md:space-y-4">
-              <li><a href="#" className="text-sm md:text-base text-slate-400 hover:text-[#6851FF] transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="text-sm md:text-base text-slate-400 hover:text-[#6851FF] transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="text-sm md:text-base text-slate-400 hover:text-[#6851FF] transition-colors">Risk Disclosure</a></li>
+              <li><a href="#products" className="text-sm md:text-base text-slate-400 hover:text-[#6851FF] transition-colors">Products</a></li>
+              <li><a href="#bridge-feature" className="text-sm md:text-base text-slate-400 hover:text-[#6851FF] transition-colors">How It Works</a></li>
+              <li><a href="#dashboard" className="text-sm md:text-base text-slate-400 hover:text-[#6851FF] transition-colors">App Preview</a></li>
+              <li><a href="#security" className="text-sm md:text-base text-slate-400 hover:text-[#6851FF] transition-colors">Security</a></li>
+              <li><a href="#team" className="text-sm md:text-base text-slate-400 hover:text-[#6851FF] transition-colors">Team</a></li>
             </ul>
           </div>
         </div>

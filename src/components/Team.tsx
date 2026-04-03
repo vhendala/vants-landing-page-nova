@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Linkedin, Twitter } from 'lucide-react';
+import { Linkedin, X as XIcon } from 'lucide-react';
 
 export const Team = () => {
   const team = [
@@ -108,8 +108,8 @@ export const Team = () => {
                     </a>
                   )}
                   {member.socials.twitter && (
-                    <a href={member.socials.twitter} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#6851FF] transition-colors" aria-label={`${member.name} Twitter`}>
-                      <Twitter className="w-5 h-5" />
+                    <a href={member.socials.twitter} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#6851FF] transition-colors" aria-label={`${member.name} X`}>
+                      <XIcon className="w-5 h-5" />
                     </a>
                   )}
                 </div>

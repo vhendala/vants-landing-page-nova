@@ -163,7 +163,7 @@ export const Hero = () => {
               </div>
 
               {/* CTA button */}
-              <button className="w-full bg-[#6851FF] text-white rounded-xl py-3 text-sm font-semibold shadow-md shadow-[#6851FF]/20 hover:bg-[#5741e0] transition-colors">
+              <button onClick={() => window.open('https://app.vants.xyz', '_blank')} className="w-full bg-[#6851FF] text-white rounded-xl py-3 text-sm font-semibold shadow-md shadow-[#6851FF]/20 hover:bg-[#5741e0] transition-colors">
                 Pay with Vants
               </button>
             </div>
