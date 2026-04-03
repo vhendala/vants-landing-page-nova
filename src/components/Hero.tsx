@@ -76,7 +76,12 @@ export const Hero = () => {
             <Button variant="primary" size="lg" className="group bg-[#6851FF] hover:bg-[#5741e0] shadow-lg shadow-[#6851FF]/25" onClick={() => window.location.href = 'https://app.vants.xyz'}>
               Open App <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="secondary" size="lg" className="group border-slate-300 text-slate-700 hover:border-[#6851FF]/40 hover:text-[#6851FF]">
+            <Button 
+              variant="secondary" 
+              size="lg" 
+              className="group border-slate-300 text-slate-700 hover:border-[#6851FF]/40 hover:text-[#6851FF]"
+              onClick={() => document.getElementById('bridge-feature')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               How it Works <ExternalLink className="ml-2 w-4 h-4 opacity-50 group-hover:opacity-100" />
             </Button>
           </motion.div>
