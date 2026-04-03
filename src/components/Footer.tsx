@@ -9,16 +9,8 @@ export const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-2 space-y-4 md:space-y-6">
             <a href="/" className="flex items-center gap-3 w-fit">
-              <div className="h-7 w-7 md:h-8 md:w-8 flex items-center justify-center">
-                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                  <rect x="10" y="20" width="80" height="8" fill="white" />
-                  <rect x="10" y="46" width="38" height="8" fill="white" />
-                  <circle cx="75" cy="50" r="11" fill="white" />
-                  <rect x="10" y="72" width="80" height="8" fill="white" />
-                </svg>
-              </div>
-              <span className="text-xl md:text-2xl font-bold font-sans tracking-tight text-white">
-                Vants
+              <span className="text-xl md:text-2xl font-bold font-sans uppercase tracking-widest text-white">
+                VANTS
               </span>
             </a>
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-sm">
@@ -82,7 +74,7 @@ export const Footer = () => {
 
         <div className="pt-6 md:pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs md:text-sm text-muted-foreground text-center md:text-left">
-            © 2026 Vants. All rights reserved.
+            © 2026 VANTS. All rights reserved.
           </p>
           <div className="text-[10px] md:text-xs text-muted-foreground max-w-lg text-center md:text-right">
             Cryptocurrency assets are volatile and involve a high degree of risk. Vants is a technology provider, not a bank.

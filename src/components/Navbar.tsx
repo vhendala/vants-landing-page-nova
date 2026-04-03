@@ -33,16 +33,8 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="/" className="flex items-center gap-3">
-            <div className="h-8 w-8 flex items-center justify-center">
-              <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                <rect x="10" y="20" width="80" height="8" fill="white"/>
-                <rect x="10" y="46" width="38" height="8" fill="white"/>
-                <circle cx="75" cy="50" r="11" fill="white"/>
-                <rect x="10" y="72" width="80" height="8" fill="white"/>
-              </svg>
-            </div>
-            <span className="text-2xl font-bold font-sans tracking-tight text-white">
-              Vants
+            <span className="text-xl font-bold font-sans uppercase tracking-widest text-white">
+              VANTS
             </span>
           </a>
 

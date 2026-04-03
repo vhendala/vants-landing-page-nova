@@ -53,7 +53,7 @@ export const Hero = () => {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-4 md:mb-6">
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              <span className="text-xs md:text-sm font-medium text-white/80">Vants Protocol v1.0 Live</span>
+              <span className="text-xs md:text-sm font-medium text-white/80">VANTS Protocol v1.0 Live</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-sans font-bold text-white leading-[1.1] tracking-tight mb-4 md:mb-6">
