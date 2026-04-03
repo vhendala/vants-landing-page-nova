@@ -229,7 +229,7 @@ export const BridgeFeature = () => {
         </div>
 
         {/* Diagram */}
-        <div className="relative w-full h-[380px] md:h-[480px] lg:h-[560px] bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+        <div className="relative w-full h-[340px] md:h-[480px] lg:h-[560px] bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
           {/* Header bar */}
           <div className="absolute top-0 left-0 right-0 h-9 bg-white border-b border-slate-200 flex items-center px-4 justify-between z-10">
             <div className="flex items-center gap-1.5">
@@ -249,7 +249,8 @@ export const BridgeFeature = () => {
             edges={initialEdges}
             nodeTypes={nodeTypes}
             fitView
-            fitViewOptions={{ padding: 0.15, minZoom: 0.5, maxZoom: 1.5 }}
+            fitViewOptions={{ padding: 0.2, minZoom: 0.15, maxZoom: 1.5 }}
+            minZoom={0.15}
             proOptions={{ hideAttribution: true }}
             panOnScroll={false}
             zoomOnScroll={false}
