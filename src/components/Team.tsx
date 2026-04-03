@@ -11,7 +11,7 @@ export const Team = () => {
       role: "CEO & Tech Lead",
       bio: "Former Sodexo/Lumx Tech Lead. 10+ years building payment infrastructure in LatAm. Led engineering teams at scale. Multiple Stellar hackathon winner.",
       initials: "WM",
-      image: "/wlad.jpeg",
+      image: "/wlad.jpg",
       socials: {
         linkedin: "https://www.linkedin.com/in/wlademyr-mendes-925aaa6b/",
         twitter: "https://x.com/omagowlad",

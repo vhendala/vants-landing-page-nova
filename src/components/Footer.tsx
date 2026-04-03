@@ -45,9 +45,8 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-6 md:pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs md:text-sm text-slate-500 text-center md:text-left">{f.copyright}</p>
-          <div className="text-[10px] md:text-xs text-slate-500 max-w-lg text-center md:text-right">{f.disclaimer}</div>
+        <div className="pt-6 md:pt-8 border-t border-slate-800 flex items-center justify-center">
+          <p className="text-xs md:text-sm text-slate-500 text-center">{f.copyright}</p>
         </div>
       </div>
     </footer>

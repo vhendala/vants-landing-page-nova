@@ -203,7 +203,6 @@ export const translations = {
       tagline: 'A global account that makes your money work harder. Earn returns on your savings and pay any bill in seconds — anywhere in Latin America.',
       navigation: 'Navigation',
       copyright: '© 2026 VANTS. All rights reserved.',
-      disclaimer: 'Financial services involve risk. Vants is a technology provider, not a bank. Returns are not guaranteed.',
     },
   },
 
@@ -400,7 +399,6 @@ export const translations = {
       tagline: 'Uma conta global que faz seu dinheiro trabalhar mais. Ganhe rendimentos nas suas economias e pague qualquer conta em segundos — em toda a América Latina.',
       navigation: 'Navegação',
       copyright: '© 2026 VANTS. Todos os direitos reservados.',
-      disclaimer: 'Serviços financeiros envolvem risco. A Vants é uma provedora de tecnologia, não um banco. Rendimentos não são garantidos.',
     },
   },
 
@@ -597,7 +595,6 @@ export const translations = {
       tagline: 'Una cuenta global que hace que tu dinero trabaje más. Genera retornos sobre tus ahorros y paga cualquier factura en segundos — en toda América Latina.',
       navigation: 'Navegación',
       copyright: '© 2026 VANTS. Todos los derechos reservados.',
-      disclaimer: 'Los servicios financieros implican riesgo. Vants es un proveedor de tecnología, no un banco. Los rendimientos no están garantizados.',
     },
   },
 } as const;
