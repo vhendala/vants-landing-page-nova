@@ -8,8 +8,8 @@ export const Team = () => {
   const team = [
     {
       name: "Wlad Mendes",
-      role: "CEO & Tech Lead",
-      bio: "Former Sodexo/Lumx Tech Lead. 10+ years building payment infrastructure in LatAm. Led engineering teams at scale. Multiple Stellar hackathon winner.",
+      role: t.team.members.wlad.role,
+      bio: t.team.members.wlad.bio,
       initials: "WM",
       image: "/wlad.jpg",
       socials: {
@@ -19,8 +19,8 @@ export const Team = () => {
     },
     {
       name: "Vhendala Tsutsui",
-      role: "Engineering",
-      bio: "Software Engineer specialized in scalable applications. Previously built infrastructure at OLX Group serving millions of users. 2nd place winner at the Dev Connect 2025 hackathon in Buenos Aires with the Vants project.",
+      role: t.team.members.vhendala.role,
+      bio: t.team.members.vhendala.bio,
       initials: "VT",
       image: "/vhendala.jpg",
       socials: {
@@ -30,8 +30,8 @@ export const Team = () => {
     },
     {
       name: "Pedro Pelicioni",
-      role: "Product & Partnerships",
-      bio: "Product leader with deep fintech expertise and a long track record building ecosystems in Latin America. VP of Stellar Ambassadors Program in Brazil.",
+      role: t.team.members.pedro.role,
+      bio: t.team.members.pedro.bio,
       initials: "PP",
       image: "/pedro.jpg",
       socials: {
