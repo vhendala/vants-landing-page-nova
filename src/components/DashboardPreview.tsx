@@ -84,15 +84,14 @@ export const DashboardPreview = () => {
         </motion.div>
 
         {/* Right: App mockup */}
-        <div className="relative perspective-[2000px] h-[420px] md:h-[480px] flex items-center justify-center">
+        <div className="relative lg:perspective-[2000px] h-auto lg:h-[480px] flex items-center justify-center py-4 lg:py-0">
           <motion.div
             style={{
               rotateX: dashboardRotateX,
               rotateY: dashboardRotateY,
               scale: dashboardScale,
-              transformStyle: 'preserve-3d',
             }}
-            className="relative bg-white border border-slate-200 rounded-3xl shadow-2xl shadow-slate-200/80 w-full max-w-sm overflow-hidden"
+            className="relative bg-white border border-slate-200 rounded-3xl shadow-xl shadow-slate-200/60 w-full max-w-sm overflow-hidden lg:[transform-style:preserve-3d]"
           >
             {/* Sheen */}
             <div className="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none z-50">
