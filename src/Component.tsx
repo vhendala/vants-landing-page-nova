@@ -23,8 +23,14 @@ export function VantsLandingPage() {
           <BridgeFeature />
         </section>
 
-        <DashboardPreview />
-        <SecuritySection />
+        <section id="dashboard">
+          <DashboardPreview />
+        </section>
+
+        <section id="security">
+          <SecuritySection />
+        </section>
+
         <Team />
       </main>
 

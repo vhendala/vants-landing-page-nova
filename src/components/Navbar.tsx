@@ -18,6 +18,8 @@ export const Navbar = () => {
   const navLinks = [
     { name: 'Products', href: '#products' },
     { name: 'How It Works', href: '#bridge-feature' },
+    { name: 'App Preview', href: '#dashboard' },
+    { name: 'Security', href: '#security' },
     { name: 'Team', href: '#team' },
   ];
 
@@ -53,11 +55,11 @@ export const Navbar = () => {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="ghost" size="sm" className="text-slate-600 hover:text-[#081229]">
+            <Button variant="ghost" size="sm" className="text-slate-600 hover:text-[#081229]" onClick={() => window.location.href = 'https://app.vants.xyz'}>
               Log in
             </Button>
-            <Button variant="primary" size="sm" className="bg-[#6851FF] hover:bg-[#5741e0] shadow-md shadow-[#6851FF]/20">
-              Join Waitlist
+            <Button variant="primary" size="sm" className="bg-[#6851FF] hover:bg-[#5741e0] shadow-md shadow-[#6851FF]/20" onClick={() => window.location.href = 'https://app.vants.xyz'}>
+              Open App
             </Button>
           </div>
 
@@ -95,11 +97,11 @@ export const Navbar = () => {
                 </a>
               ))}
               <div className="h-px bg-slate-200 my-2" />
-              <Button variant="secondary" className="w-full justify-center text-[#081229] border-slate-300">
+              <Button variant="secondary" className="w-full justify-center text-[#081229] border-slate-300" onClick={() => window.location.href = 'https://app.vants.xyz'}>
                 Log in
               </Button>
-              <Button variant="primary" className="w-full justify-center bg-[#6851FF]">
-                Join Waitlist
+              <Button variant="primary" className="w-full justify-center bg-[#6851FF]" onClick={() => window.location.href = 'https://app.vants.xyz'}>
+                Open App
               </Button>
             </div>
           </motion.div>
