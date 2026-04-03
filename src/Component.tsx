@@ -5,6 +5,7 @@ import { BridgeFeature } from './components/BridgeFeature';
 // import { LoanCalculator } from './components/LoanCalculator';
 import { DashboardPreview } from './components/DashboardPreview';
 import { SecuritySection } from './components/SecuritySection';
+import { Team } from './components/Team';
 import { Footer } from './components/Footer';
 
 export function VantsLandingPage() {
@@ -37,6 +38,7 @@ export function VantsLandingPage() {
 
         <DashboardPreview />
         <SecuritySection />
+        <Team />
       </main>
 
       <Footer />
