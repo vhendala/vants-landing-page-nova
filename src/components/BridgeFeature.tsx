@@ -8,237 +8,162 @@ import ReactFlow, {
   Edge
 } from 'reactflow';
 import 'reactflow/dist/style.css';
-import { Wallet, Zap, Lock, ArrowLeftRight, Banknote, Store } from 'lucide-react';
+import { Wallet, Zap, RefreshCcw, ArrowLeftRight, Banknote, Store } from 'lucide-react';
 
-// --- Custom Node Components ---
+// --- Custom Node Components (Light Mode) ---
 
-// 1. Input Node (Wallet)
-const InputNode = ({ data }: NodeProps) => {
-  return (
-    <div className="relative group min-w-[200px]">
-       {/* Glow effect */}
-       <div className="absolute -inset-2 bg-gradient-to-br from-[#6C63FF]/40 via-[#00C9FF]/40 to-primary/40 rounded-2xl blur-lg opacity-60 group-hover:opacity-100 transition-opacity"></div>
-
-       <div className="relative flex flex-col items-center p-5 bg-gradient-to-br from-[#112240] to-[#0A192F] border border-primary/40 rounded-2xl shadow-2xl">
-        <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center mb-3 text-white border border-primary/30 shadow-lg">
-          <Wallet size={26} className="drop-shadow-lg" />
-        </div>
-        <div className="text-center">
-          <div className="text-[9px] font-mono text-primary/70 mb-1 tracking-widest">SOURCE</div>
-          <h3 className="text-white font-bold text-base font-sans">{data.label}</h3>
-          <div className="mt-1.5 flex items-center justify-center gap-1">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#00C853] animate-pulse"></div>
-            <span className="text-[9px] text-[#00C853] font-medium">CONNECTED</span>
-          </div>
-        </div>
-        <Handle type="source" position={Position.Right} className="!bg-primary !w-3 !h-3 !border-2 !border-[#0A192F]" />
+const InputNode = ({ data }: NodeProps) => (
+  <div className="relative group min-w-[180px]">
+    <div className="absolute -inset-2 bg-gradient-to-br from-[#6851FF]/20 to-indigo-200/30 rounded-2xl blur-lg opacity-50 group-hover:opacity-100 transition-opacity" />
+    <div className="relative flex flex-col items-center p-5 bg-white border-2 border-[#6851FF]/30 rounded-2xl shadow-lg">
+      <div className="w-12 h-12 rounded-xl bg-[#6851FF]/10 flex items-center justify-center mb-3 text-[#6851FF] border border-[#6851FF]/20">
+        <Wallet size={24} />
       </div>
+      <div className="text-center">
+        <div className="text-[9px] font-sans text-[#6851FF]/60 mb-1 tracking-widest uppercase">Your Account</div>
+        <h3 className="text-[#081229] font-bold text-sm">{data.label}</h3>
+        <div className="mt-1.5 flex items-center justify-center gap-1">
+          <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+          <span className="text-[9px] text-emerald-500 font-medium">ACTIVE</span>
+        </div>
+      </div>
+      <Handle type="source" position={Position.Right} className="!bg-[#6851FF] !w-3 !h-3 !border-2 !border-white" />
     </div>
-  );
+  </div>
+);
+
+const CoreNode = ({ data }: NodeProps) => (
+  <div className="relative min-w-[220px]">
+    <div className="absolute inset-0 bg-gradient-to-r from-[#6851FF]/10 to-indigo-100/30 blur-2xl rounded-full animate-pulse" />
+    <div className="relative p-5 bg-white border-2 border-[#6851FF] rounded-2xl shadow-xl">
+      <div className="absolute top-0 left-0 bg-[#6851FF] text-white text-[9px] font-sans px-2 py-1 font-bold uppercase rounded-tl-xl rounded-br-xl tracking-wide">
+        Smart Payment
+      </div>
+      <div className="flex items-center gap-3 mt-2">
+        <div className="w-12 h-12 rounded-xl bg-[#6851FF]/10 flex items-center justify-center border border-[#6851FF]/20 text-[#6851FF] shrink-0 relative">
+          <Zap size={24} />
+          <div className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-400 rounded-full animate-ping" />
+          <div className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-400 rounded-full" />
+        </div>
+        <div>
+          <h3 className="text-base font-bold text-[#081229] tracking-tight">{data.label}</h3>
+          <p className="text-[9px] text-[#6851FF] mt-0.5 font-sans tracking-wider uppercase">Routing engine</p>
+        </div>
+      </div>
+      <Handle type="target" position={Position.Left} id="in" className="!bg-[#6851FF] !w-3 !h-3 !border-2 !border-white" />
+      <Handle type="target" position={Position.Top} id="in-top" className="!bg-[#6851FF] !w-3 !h-3 !border-2 !border-white" />
+      <Handle type="source" position={Position.Right} id="out-right" className="!bg-[#6851FF] !w-3 !h-3 !border-2 !border-white" />
+    </div>
+  </div>
+);
+
+const colors = {
+  amber: { bg: 'bg-amber-50', border: 'border-amber-200', text: 'text-amber-600', icon: 'bg-amber-100', handle: '!bg-amber-400' },
+  violet: { bg: 'bg-violet-50', border: 'border-violet-200', text: 'text-violet-600', icon: 'bg-violet-100', handle: '!bg-violet-400' },
+  emerald: { bg: 'bg-emerald-50', border: 'border-emerald-200', text: 'text-emerald-600', icon: 'bg-emerald-100', handle: '!bg-emerald-400' },
 };
 
-// 2. Core Processor Node (Smart Router)
-const CoreNode = ({ data }: NodeProps) => {
-  return (
-    <div className="relative min-w-[260px]">
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 blur-2xl rounded-full animate-pulse"></div>
-      <div className="relative p-6 bg-gradient-to-br from-[#112240] to-[#0A192F] border-2 border-primary rounded-2xl shadow-[0_0_40px_rgba(108,99,255,0.3)]">
-        <div className="absolute top-0 left-0 bg-gradient-to-r from-primary to-accent text-white text-[9px] font-mono px-2 py-1 font-bold uppercase rounded-tl-xl rounded-br-xl">
-          AI Router
-        </div>
-
-        <div className="flex items-center gap-4 mt-2">
-          <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center border border-primary/40 text-white shrink-0 shadow-lg relative">
-            <Zap size={28} className="drop-shadow-lg" />
-            <div className="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full animate-ping"></div>
-            <div className="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full"></div>
-          </div>
-          <div>
-            <h3 className="text-xl font-bold text-white font-sans tracking-tight">{data.label}</h3>
-            <p className="text-[9px] text-accent mt-1 font-mono tracking-wider">ROUTING_ENGINE</p>
-          </div>
-        </div>
-
-        {/* Managed Services Indicators */}
-        <div className="mt-4 flex items-center justify-center gap-2">
-          <div className="w-1.5 h-1.5 rounded-full bg-amber-400 shadow-sm shadow-amber-400/50"></div>
-          <div className="w-1.5 h-1.5 rounded-full bg-violet-400 shadow-sm shadow-violet-400/50"></div>
-          <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-sm shadow-cyan-400/50"></div>
-          <span className="text-[8px] text-white/40 font-mono ml-1.5 tracking-wider">
-            MANAGES_ALL
-          </span>
-        </div>
-
-        {/* Handles */}
-        <Handle type="target" position={Position.Left} id="in" className="!bg-primary !w-3 !h-3 !border-2 !border-[#0A192F]" />
-        <Handle type="target" position={Position.Top} id="in-top" className="!bg-primary !w-3 !h-3 !border-2 !border-[#0A192F]" />
-        <Handle type="source" position={Position.Right} id="out-right" className="!bg-primary !w-3 !h-3 !border-2 !border-[#0A192F]" />
-      </div>
-    </div>
-  );
-};
-
-// 3. Service Node (Liquidity, DEX, Offramp)
 const ServiceNode = ({ data }: NodeProps) => {
-  const colors = {
-    amber: {
-      gradient: "from-amber-500/20 to-orange-500/20",
-      border: "border-amber-400/40",
-      text: "text-amber-400",
-      glow: "shadow-amber-500/20",
-      icon: "from-amber-500/30 to-orange-500/30"
-    },
-    violet: {
-      gradient: "from-violet-500/20 to-purple-500/20",
-      border: "border-violet-400/40",
-      text: "text-violet-400",
-      glow: "shadow-violet-500/20",
-      icon: "from-violet-500/30 to-purple-500/30"
-    },
-    emerald: {
-      gradient: "from-emerald-500/20 to-teal-500/20",
-      border: "border-emerald-400/40",
-      text: "text-emerald-400",
-      glow: "shadow-emerald-500/20",
-      icon: "from-emerald-500/30 to-teal-500/30"
-    },
-    cyan: {
-      gradient: "from-cyan-500/20 to-blue-500/20",
-      border: "border-cyan-400/40",
-      text: "text-cyan-400",
-      glow: "shadow-cyan-500/20",
-      icon: "from-cyan-500/30 to-blue-500/30"
-    }
-  };
-
   const theme = colors[data.color as keyof typeof colors] || colors.amber;
-
   return (
-    <div className={`relative p-4 bg-gradient-to-br ${theme.gradient} backdrop-blur-sm border ${theme.border} rounded-2xl shadow-xl ${theme.glow} flex items-center gap-4 min-w-[220px] group hover:scale-105 transition-all`}>
-      {/* Decorative corner glow */}
-      <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-white/5 to-transparent rounded-2xl pointer-events-none"></div>
-
-      <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${theme.icon} flex items-center justify-center border border-white/10 ${theme.text} shrink-0 shadow-lg`}>
+    <div className={`relative p-4 ${theme.bg} border ${theme.border} rounded-2xl shadow-sm flex items-center gap-3 min-w-[200px] group hover:shadow-md transition-all`}>
+      <div className={`w-10 h-10 rounded-xl ${theme.icon} flex items-center justify-center ${theme.text} shrink-0`}>
         {data.icon}
       </div>
-      <div className="flex-1">
-        <div className="text-[10px] font-mono text-white/80 mb-0.5 tracking-widest uppercase">{data.sub}</div>
-        <h4 className="text-white font-bold font-sans text-base tracking-wide">{data.label}</h4>
+      <div>
+        <div className={`text-[9px] font-sans ${theme.text} mb-0.5 tracking-widest uppercase`}>{data.sub}</div>
+        <h4 className="text-[#081229] font-bold text-sm">{data.label}</h4>
       </div>
-
-      <Handle
-        type="source"
-        position={Position.Bottom}
-        className={`!w-3 !h-3 !border-2 !border-[#0A192F] ${data.handleColor || '!bg-gray-400'}`}
-      />
+      <Handle type="source" position={Position.Bottom} className={`!w-3 !h-3 !border-2 !border-white ${theme.handle}`} />
     </div>
   );
 };
 
-// 4. Destination Node (Merchant)
-const DestinationNode = ({ data }: NodeProps) => {
-  return (
-    <div className="relative group min-w-[200px]">
-       {/* Glow effect */}
-       <div className="absolute -inset-2 bg-gradient-to-br from-amber-500/40 via-orange-500/40 to-amber-600/40 rounded-2xl blur-lg opacity-60 group-hover:opacity-100 transition-opacity"></div>
-
-       <div className="relative flex flex-col items-center p-5 bg-gradient-to-br from-[#112240] to-[#0A192F] border border-amber-500/40 rounded-2xl shadow-2xl">
-        <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-amber-500/30 to-orange-500/30 flex items-center justify-center mb-3 text-white border border-amber-500/30 shadow-lg">
-          <Store size={26} className="drop-shadow-lg" />
-        </div>
-        <div className="text-center">
-          <div className="text-[10px] font-mono text-amber-400/80 mb-1 tracking-widest">DESTINATION</div>
-          <h3 className="text-white font-bold text-base font-sans">{data.label}</h3>
-          <div className="mt-1.5 px-3 py-1 bg-amber-500/10 rounded-full border border-amber-500/20">
-            <span className="text-[10px] text-amber-400 font-medium font-mono">PIX • CVU</span>
-          </div>
-        </div>
-        <Handle type="target" position={Position.Left} className="!bg-amber-500 !w-3 !h-3 !border-2 !border-[#0A192F]" />
+const DestinationNode = ({ data }: NodeProps) => (
+  <div className="relative group min-w-[180px]">
+    <div className="absolute -inset-2 bg-gradient-to-br from-amber-200/40 to-orange-100/30 rounded-2xl blur-lg opacity-50 group-hover:opacity-100 transition-opacity" />
+    <div className="relative flex flex-col items-center p-5 bg-white border-2 border-amber-300 rounded-2xl shadow-lg">
+      <div className="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center mb-3 text-amber-500 border border-amber-200">
+        <Store size={24} />
       </div>
+      <div className="text-center">
+        <div className="text-[10px] font-sans text-amber-500/80 mb-1 tracking-widest uppercase">Destination</div>
+        <h3 className="text-[#081229] font-bold text-sm">{data.label}</h3>
+        <div className="mt-1.5 px-3 py-1 bg-amber-50 rounded-full border border-amber-200">
+          <span className="text-[10px] text-amber-600 font-medium font-sans">Pix • CBU • SPEI</span>
+        </div>
+      </div>
+      <Handle type="target" position={Position.Left} className="!bg-amber-400 !w-3 !h-3 !border-2 !border-white" />
     </div>
-  );
-};
-
+  </div>
+);
 
 // --- Main Component ---
 
 export const BridgeFeature = () => {
-
-  // Define Nodes - Main flow horizontal + background services
   const initialNodes = useMemo(() => [
     {
       id: 'wallet',
       type: 'inputNode',
       position: { x: 50, y: 250 },
-      data: { label: 'Your Wallet' },
+      data: { label: 'Your Account' },
     },
     {
       id: 'core',
       type: 'coreNode',
-      position: { x: 420, y: 230 },
-      data: { label: 'Vants Router' },
+      position: { x: 380, y: 230 },
+      data: { label: 'Vants' },
     },
     {
       id: 'merchant',
       type: 'destinationNode',
-      position: { x: 850, y: 250 },
+      position: { x: 790, y: 250 },
       data: { label: 'Merchant' },
     },
-    // Background services (abstracted)
     {
-      id: 'liquidity',
+      id: 'redeem',
       type: 'serviceNode',
       position: { x: 140, y: 30 },
       data: {
-        label: 'Liquidity Pool',
-        sub: 'Collateral Lock',
-        icon: <Lock size={18} />,
+        label: 'Redeem Earnings',
+        sub: 'Best option',
+        icon: <RefreshCcw size={16} />,
         color: 'amber',
-        handleColor: '!bg-amber-400',
-        hasOutput: false
       },
     },
     {
-      id: 'dex',
+      id: 'exchange',
       type: 'serviceNode',
-      position: { x: 400, y: 30 },
+      position: { x: 390, y: 30 },
       data: {
-        label: 'DEX Swap',
-        sub: 'Best Rate',
-        icon: <ArrowLeftRight size={18} />,
+        label: 'Currency Exchange',
+        sub: 'Best rate',
+        icon: <ArrowLeftRight size={16} />,
         color: 'violet',
-        handleColor: '!bg-violet-400',
-        hasOutput: false
       },
     },
     {
-      id: 'offramp',
+      id: 'direct',
       type: 'serviceNode',
-      position: { x: 660, y: 30 },
+      position: { x: 640, y: 30 },
       data: {
-        label: 'Payment Rails',
-        sub: 'Pix • CVU • Wire',
-        icon: <Banknote size={18} />,
-        color: 'cyan',
-        handleColor: '!bg-cyan-400',
-        hasOutput: false
+        label: 'Direct Transfer',
+        sub: 'Pix • CBU • SPEI',
+        icon: <Banknote size={16} />,
+        color: 'emerald',
       },
     },
   ], []);
 
-  // Define Edges - Primary flow + background services
   const initialEdges: Edge[] = useMemo(() => [
-    // PRIMARY FLOW - Main user journey
-    // Wallet -> Core (thick, animated, purple)
     {
       id: 'e1',
       source: 'wallet',
       target: 'core',
       type: 'smoothstep',
       animated: true,
-      style: { stroke: '#6C63FF', strokeWidth: 3 }
+      style: { stroke: '#6851FF', strokeWidth: 2.5 },
     },
-    // Core -> Merchant (thick, animated, amber)
     {
       id: 'e2',
       source: 'core',
@@ -246,43 +171,38 @@ export const BridgeFeature = () => {
       sourceHandle: 'out-right',
       type: 'smoothstep',
       animated: true,
-      style: { stroke: '#f59e0b', strokeWidth: 3 },
-      markerEnd: { type: MarkerType.ArrowClosed, color: '#f59e0b' }
+      style: { stroke: '#f59e0b', strokeWidth: 2.5 },
+      markerEnd: { type: MarkerType.ArrowClosed, color: '#f59e0b' },
     },
-
-    // BACKGROUND SERVICES - Connected to Vants Router
-    // Liquidity -> Core
     {
       id: 'e3',
-      source: 'liquidity',
+      source: 'redeem',
       target: 'core',
       targetHandle: 'in-top',
       type: 'smoothstep',
       animated: true,
-      style: { stroke: '#fbbf24', strokeWidth: 2 },
-      markerEnd: { type: MarkerType.ArrowClosed, color: '#fbbf24' }
+      style: { stroke: '#fbbf24', strokeWidth: 1.5 },
+      markerEnd: { type: MarkerType.ArrowClosed, color: '#fbbf24' },
     },
-    // DEX -> Core
     {
       id: 'e4',
-      source: 'dex',
+      source: 'exchange',
       target: 'core',
       targetHandle: 'in-top',
       type: 'smoothstep',
       animated: true,
-      style: { stroke: '#a78bfa', strokeWidth: 2 },
-      markerEnd: { type: MarkerType.ArrowClosed, color: '#a78bfa' }
+      style: { stroke: '#a78bfa', strokeWidth: 1.5 },
+      markerEnd: { type: MarkerType.ArrowClosed, color: '#a78bfa' },
     },
-    // Offramp -> Core
     {
       id: 'e5',
-      source: 'offramp',
+      source: 'direct',
       target: 'core',
       targetHandle: 'in-top',
       type: 'smoothstep',
       animated: true,
-      style: { stroke: '#06b6d4', strokeWidth: 2 },
-      markerEnd: { type: MarkerType.ArrowClosed, color: '#06b6d4' }
+      style: { stroke: '#34d399', strokeWidth: 1.5 },
+      markerEnd: { type: MarkerType.ArrowClosed, color: '#34d399' },
     },
   ], []);
 
@@ -290,36 +210,37 @@ export const BridgeFeature = () => {
     inputNode: InputNode,
     coreNode: CoreNode,
     serviceNode: ServiceNode,
-    destinationNode: DestinationNode
+    destinationNode: DestinationNode,
   }), []);
 
   return (
-    <div className="w-full py-16 md:py-24 bg-[#0A192F] relative overflow-hidden">
+    <div className="w-full py-16 md:py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-5xl font-sans font-bold text-white mb-4 md:mb-6">
-            The <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Smart Bridge</span> Engine
+          <h2 className="text-2xl md:text-3xl lg:text-5xl font-sans font-bold text-[#081229] mb-4 md:mb-6">
+            How Vants{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6851FF] to-indigo-400">
+              pays for you
+            </span>
           </h2>
-          <p className="text-muted-foreground text-base md:text-lg">
-            Simple flow. Complex infrastructure abstracted. Instant settlement in &lt; 3 seconds.
+          <p className="text-slate-600 text-base md:text-lg">
+            Tap to pay. Vants figures out the best way to settle — you just go.
           </p>
         </div>
 
-        {/* Diagram Container */}
-        <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] bg-gradient-to-br from-[#112240]/40 to-[#0A192F]/40 border border-primary/20 rounded-xl md:rounded-2xl overflow-hidden shadow-2xl backdrop-blur-sm">
-          {/* Header Bar */}
-          <div className="absolute top-0 left-0 right-0 h-8 md:h-10 bg-gradient-to-r from-[#112240] to-[#0A192F] border-b border-white/10 flex items-center px-3 md:px-5 justify-between z-10">
-            <div className="flex items-center gap-1.5 md:gap-2.5">
-              <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-red-500/60 hover:bg-red-500 transition-colors cursor-pointer"></div>
-              <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-yellow-500/60 hover:bg-yellow-500 transition-colors cursor-pointer"></div>
-              <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-green-500/60 hover:bg-green-500 transition-colors cursor-pointer"></div>
+        {/* Diagram */}
+        <div className="relative w-full h-[380px] md:h-[480px] lg:h-[560px] bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+          {/* Header bar */}
+          <div className="absolute top-0 left-0 right-0 h-9 bg-white border-b border-slate-200 flex items-center px-4 justify-between z-10">
+            <div className="flex items-center gap-1.5">
+              <div className="w-2.5 h-2.5 rounded-full bg-red-400/60" />
+              <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/60" />
+              <div className="w-2.5 h-2.5 rounded-full bg-green-400/60" />
             </div>
-            <div className="flex items-center gap-2 md:gap-3">
-              <div className="flex items-center gap-1 md:gap-1.5">
-                <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-green-500 animate-pulse"></div>
-                <span className="text-[8px] md:text-[10px] text-green-400 font-medium">LIVE</span>
-              </div>
-              <div className="hidden md:block text-[10px] font-mono text-white/40">PAYMENT_FLOW_V3.0</div>
+            <div className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="text-[10px] text-emerald-500 font-medium font-sans">LIVE</span>
+              <span className="hidden md:block text-[10px] font-sans text-slate-400 ml-2">PAYMENT_FLOW</span>
             </div>
           </div>
 
@@ -328,11 +249,7 @@ export const BridgeFeature = () => {
             edges={initialEdges}
             nodeTypes={nodeTypes}
             fitView
-            fitViewOptions={{
-              padding: 0.15,
-              minZoom: 0.5,
-              maxZoom: 1.5
-            }}
+            fitViewOptions={{ padding: 0.15, minZoom: 0.5, maxZoom: 1.5 }}
             proOptions={{ hideAttribution: true }}
             panOnScroll={false}
             zoomOnScroll={false}
@@ -345,41 +262,20 @@ export const BridgeFeature = () => {
             elementsSelectable={false}
             className="bg-transparent"
           >
-            <Background
-              color="#64ffda"
-              gap={20}
-              size={1}
-              className="opacity-[0.05]"
-            />
+            <Background color="#6851FF" gap={24} size={1} className="opacity-[0.04]" />
           </ReactFlow>
         </div>
 
-        {/* Legend / Status Footer */}
-        <div className="mt-4 md:mt-6 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4 text-[10px] md:text-xs font-mono text-primary/40 px-2 md:px-4">
-          <div className="flex items-center gap-2">
-            <span className="text-white/60">// FLOW_ARCHITECTURE</span>
+        {/* Legend */}
+        <div className="mt-5 flex flex-col md:flex-row justify-between items-center gap-3 text-xs font-sans text-slate-400 px-2">
+          <span className="text-slate-400">// Payment routing is automatic and instant</span>
+          <div className="flex gap-5">
+            <div className="flex items-center gap-1.5"><div className="w-2 h-2 rounded-full bg-amber-400" /><span>Redeem Earnings</span></div>
+            <div className="flex items-center gap-1.5"><div className="w-2 h-2 rounded-full bg-violet-400" /><span>Currency Exchange</span></div>
+            <div className="flex items-center gap-1.5"><div className="w-2 h-2 rounded-full bg-emerald-400" /><span>Direct Transfer</span></div>
           </div>
-          <div className="flex gap-4 md:gap-6">
-            <div className="flex items-center gap-1.5 md:gap-2">
-              <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-amber-400"></div>
-              <span>Liquidity</span>
-            </div>
-            <div className="flex items-center gap-1.5 md:gap-2">
-              <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-violet-400"></div>
-              <span>Exchange</span>
-            </div>
-            <div className="flex items-center gap-1.5 md:gap-2">
-              <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-cyan-400"></div>
-              <span>Fiat Rails</span>
-            </div>
-          </div>
-          <div className="flex gap-2 md:gap-4 text-[9px] md:text-xs">
-            <span className="hidden sm:inline">USER_FLOW: 3</span>
-            <span className="hidden sm:inline">SERVICES: 3</span>
-            <span className="text-green-500/80">✓ ABSTRACTED</span>
-          </div>
+          <span className="text-emerald-500 font-medium">✓ Settled in under 5 seconds</span>
         </div>
-
       </div>
     </div>
   );

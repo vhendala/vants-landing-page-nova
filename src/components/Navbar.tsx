@@ -17,15 +17,15 @@ export const Navbar = () => {
 
   const navLinks = [
     { name: 'Products', href: '#products' },
-    { name: 'Developers', href: '#developers' },
-    { name: 'Company', href: '#company' },
+    { name: 'How It Works', href: '#bridge-feature' },
+    { name: 'Team', href: '#team' },
   ];
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled || mobileMenuOpen
-          ? 'bg-[#0A192F]/80 backdrop-blur-xl border-b border-white/5'
+          ? 'bg-white/90 backdrop-blur-xl border-b border-slate-200 shadow-sm'
           : 'bg-transparent border-b border-transparent'
       }`}
     >
@@ -33,7 +33,7 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="/" className="flex items-center gap-3">
-            <span className="text-xl font-bold font-sans uppercase tracking-widest text-white">
+            <span className={`text-xl font-bold font-sans uppercase tracking-widest transition-colors ${isScrolled || mobileMenuOpen ? 'text-[#081229]' : 'text-[#081229]'}`}>
               VANTS
             </span>
           </a>
@@ -44,7 +44,7 @@ export const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-white transition-colors"
+                className="text-sm font-medium text-slate-600 hover:text-[#081229] transition-colors"
               >
                 {link.name}
               </a>
@@ -53,11 +53,11 @@ export const Navbar = () => {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="ghost" size="sm">
+            <Button variant="ghost" size="sm" className="text-slate-600 hover:text-[#081229]">
               Log in
             </Button>
-            <Button variant="primary" size="sm" className="shadow-primary/20">
-              Launch App
+            <Button variant="primary" size="sm" className="bg-[#6851FF] hover:bg-[#5741e0] shadow-md shadow-[#6851FF]/20">
+              Join Waitlist
             </Button>
           </div>
 
@@ -65,7 +65,7 @@ export const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-white p-2"
+              className="text-[#081229] p-2"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -80,26 +80,26 @@ export const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#0A192F] border-b border-white/5 overflow-hidden"
+            className="md:hidden bg-white border-b border-slate-200 overflow-hidden"
           >
             <div className="px-6 py-8 flex flex-col gap-6">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-lg font-medium text-white flex items-center justify-between group"
+                  className="text-lg font-medium text-[#081229] flex items-center justify-between group"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.name}
                   <ChevronRight size={16} className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
               ))}
-              <div className="h-px bg-white/10 my-2" />
-              <Button variant="secondary" className="w-full justify-center">
+              <div className="h-px bg-slate-200 my-2" />
+              <Button variant="secondary" className="w-full justify-center text-[#081229] border-slate-300">
                 Log in
               </Button>
-              <Button variant="primary" className="w-full justify-center">
-                Launch App
+              <Button variant="primary" className="w-full justify-center bg-[#6851FF]">
+                Join Waitlist
               </Button>
             </div>
           </motion.div>
