@@ -9,6 +9,7 @@ import ReactFlow, {
 } from 'reactflow';
 import 'reactflow/dist/style.css';
 import { Wallet, Zap, RefreshCcw, ArrowLeftRight, Banknote, Store } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 // --- Custom Node Components (Light Mode) ---
 
@@ -101,32 +102,35 @@ const DestinationNode = ({ data }: NodeProps) => (
 // --- Main Component ---
 
 export const BridgeFeature = () => {
+  const { t } = useLanguage();
+  const b = t.bridge;
+
   const initialNodes = useMemo(() => [
     {
       id: 'wallet',
       type: 'inputNode',
       position: { x: 50, y: 250 },
-      data: { label: 'Your Account' },
+      data: { label: b.nodeYourAccount, active: b.badgeActive },
     },
     {
       id: 'core',
       type: 'coreNode',
       position: { x: 380, y: 230 },
-      data: { label: 'Vants' },
+      data: { label: b.nodeVants, smart: b.badgeSmart, routing: b.badgeRouting },
     },
     {
       id: 'merchant',
       type: 'destinationNode',
       position: { x: 790, y: 250 },
-      data: { label: 'Merchant' },
+      data: { label: b.nodeMerchant },
     },
     {
       id: 'redeem',
       type: 'serviceNode',
       position: { x: 140, y: 30 },
       data: {
-        label: 'Redeem Earnings',
-        sub: 'Best option',
+        label: b.nodeRedeem,
+        sub: b.nodeRedeemSub,
         icon: <RefreshCcw size={16} />,
         color: 'amber',
       },
@@ -136,8 +140,8 @@ export const BridgeFeature = () => {
       type: 'serviceNode',
       position: { x: 390, y: 30 },
       data: {
-        label: 'Currency Exchange',
-        sub: 'Best rate',
+        label: b.nodeExchange,
+        sub: b.nodeExchangeSub,
         icon: <ArrowLeftRight size={16} />,
         color: 'violet',
       },
@@ -147,13 +151,14 @@ export const BridgeFeature = () => {
       type: 'serviceNode',
       position: { x: 640, y: 30 },
       data: {
-        label: 'Direct Transfer',
-        sub: 'Pix • CBU • SPEI',
+        label: b.nodeDirect,
+        sub: b.nodeDirectSub,
         icon: <Banknote size={16} />,
         color: 'emerald',
       },
     },
-  ], []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  ], [b]);
 
   const initialEdges: Edge[] = useMemo(() => [
     {
@@ -218,13 +223,13 @@ export const BridgeFeature = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
           <h2 className="text-2xl md:text-3xl lg:text-5xl font-sans font-bold text-[#081229] mb-4 md:mb-6">
-            How Vants{' '}
+            {b.title1}{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6851FF] to-indigo-400">
-              pays for you
+              {b.title2}
             </span>
           </h2>
           <p className="text-slate-600 text-base md:text-lg">
-            Tap to pay. Vants figures out the best way to settle — you just go.
+            {b.subtitle}
           </p>
         </div>
 
@@ -269,13 +274,13 @@ export const BridgeFeature = () => {
 
         {/* Legend */}
         <div className="mt-5 flex flex-col md:flex-row justify-between items-center gap-3 text-xs font-sans text-slate-400 px-2">
-          <span className="text-slate-400">// Payment routing is automatic and instant</span>
+          <span className="text-slate-400">{b.legendAuto}</span>
           <div className="flex gap-5">
-            <div className="flex items-center gap-1.5"><div className="w-2 h-2 rounded-full bg-amber-400" /><span>Redeem Earnings</span></div>
-            <div className="flex items-center gap-1.5"><div className="w-2 h-2 rounded-full bg-violet-400" /><span>Currency Exchange</span></div>
-            <div className="flex items-center gap-1.5"><div className="w-2 h-2 rounded-full bg-emerald-400" /><span>Direct Transfer</span></div>
+            <div className="flex items-center gap-1.5"><div className="w-2 h-2 rounded-full bg-amber-400" /><span>{b.nodeRedeem}</span></div>
+            <div className="flex items-center gap-1.5"><div className="w-2 h-2 rounded-full bg-violet-400" /><span>{b.nodeExchange}</span></div>
+            <div className="flex items-center gap-1.5"><div className="w-2 h-2 rounded-full bg-emerald-400" /><span>{b.nodeDirect}</span></div>
           </div>
-          <span className="text-emerald-500 font-medium">✓ Settled in under 5 seconds</span>
+          <span className="text-emerald-500 font-medium">{b.legendSettled}</span>
         </div>
       </div>
     </div>
