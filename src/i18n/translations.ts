@@ -372,7 +372,7 @@ export const translations = {
     team: {
       title1: 'Conheça o',
       title2: 'Time',
-      subtitle: 'Um time de construtores experientes, engenheiros e líderes de produto apaixonados por tornar o acesso financeiro mais simples para todos.',
+      subtitle: 'Um time de builders experientes, engenheiros e líderes de produto apaixonados por tornar o acesso financeiro mais simples para todos.',
       members: {
         wlad: {
           role: "CEO & Tech Lead",
@@ -582,7 +582,7 @@ export const translations = {
     team: {
       title1: 'Conoce al',
       title2: 'Equipo',
-      subtitle: 'Un equipo de constructores experimentados, ingenieros y líderes de producto apasionados por hacer el acceso financiero más simple para todos.',
+      subtitle: 'Un equipo de builders experimentados, ingenieros y líderes de producto apasionados por hacer el acceso financiero más simple para todos.',
       members: {
         wlad: {
           role: "CEO & Tech Lead",

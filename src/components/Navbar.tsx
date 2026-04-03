@@ -1,38 +1,25 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronRight, Globe } from 'lucide-react';
+import { Menu, X, ChevronRight } from 'lucide-react';
 import { Button } from './ui/Button';
 import { useLanguage } from '../context/LanguageContext';
 import type { Language } from '../i18n/translations';
 
-const LANGUAGES: { code: Language; label: string; flag: string }[] = [
-  { code: 'en', label: 'EN', flag: '🇺🇸' },
-  { code: 'pt', label: 'PT', flag: '🇧🇷' },
-  { code: 'es', label: 'ES', flag: '🇲🇽' },
+const LANGUAGES: { code: Language; label: string }[] = [
+  { code: 'en', label: 'EN' },
+  { code: 'pt', label: 'PT' },
+  { code: 'es', label: 'ES' },
 ];
 
 export const Navbar = () => {
   const { t, language, setLanguage } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [langMenuOpen, setLangMenuOpen] = useState(false);
-  const langRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Close lang dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (langRef.current && !langRef.current.contains(e.target as Node)) {
-        setLangMenuOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   const navLinks = [
@@ -42,8 +29,6 @@ export const Navbar = () => {
     { name: t.nav.security, href: '#security' },
     { name: t.nav.team, href: '#team' },
   ];
-
-  const currentLang = LANGUAGES.find(l => l.code === language)!;
 
   return (
     <nav
@@ -77,43 +62,21 @@ export const Navbar = () => {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center gap-3">
-            {/* Language switcher */}
-            <div ref={langRef} className="relative">
-              <button
-                onClick={() => setLangMenuOpen(!langMenuOpen)}
-                className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-[#081229] hover:bg-slate-100 transition-all"
-              >
-                <Globe size={15} className="text-slate-400" />
-                <span>{currentLang.flag}</span>
-                <span>{currentLang.label}</span>
-              </button>
-
-              <AnimatePresence>
-                {langMenuOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 6, scale: 0.96 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 6, scale: 0.96 }}
-                    transition={{ duration: 0.15 }}
-                    className="absolute right-0 top-full mt-2 bg-white border border-slate-200 rounded-xl shadow-lg overflow-hidden min-w-[120px] py-1"
-                  >
-                    {LANGUAGES.map((lang) => (
-                      <button
-                        key={lang.code}
-                        onClick={() => { setLanguage(lang.code); setLangMenuOpen(false); }}
-                        className={`w-full flex items-center gap-2.5 px-4 py-2.5 text-sm transition-colors ${
-                          language === lang.code
-                            ? 'bg-[#6851FF]/8 text-[#6851FF] font-semibold'
-                            : 'text-slate-600 hover:bg-slate-50'
-                        }`}
-                      >
-                        <span>{lang.flag}</span>
-                        <span>{lang.label}</span>
-                      </button>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
+            {/* Language switcher inline */}
+            <div className="flex items-center gap-1 bg-slate-100 rounded-lg p-1 mr-2">
+              {LANGUAGES.map((lang) => (
+                <button
+                  key={lang.code}
+                  onClick={() => setLanguage(lang.code)}
+                  className={`px-2.5 py-1.5 rounded-md text-xs font-bold transition-all ${
+                    language === lang.code
+                      ? 'bg-white text-[#6851FF] shadow-sm'
+                      : 'text-slate-500 hover:text-slate-700'
+                  }`}
+                >
+                  {lang.label}
+                </button>
+              ))}
             </div>
 
             <Button
