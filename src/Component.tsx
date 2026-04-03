@@ -7,6 +7,7 @@ import { DashboardPreview } from './components/DashboardPreview';
 import { SecuritySection } from './components/SecuritySection';
 import { Team } from './components/Team';
 import { Footer } from './components/Footer';
+import { FAQ } from './components/FAQ';
 
 export function VantsLandingPage() {
   return (
@@ -34,6 +35,7 @@ export function VantsLandingPage() {
         <Team />
       </main>
 
+      <FAQ />
       <Footer />
     </div>
   );
