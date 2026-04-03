@@ -1,4 +1,4 @@
-import { X, Linkedin, Instagram } from 'lucide-react';
+import { X, Linkedin, Instagram, Mail } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export const Footer = () => {
@@ -28,6 +28,10 @@ export const Footer = () => {
               <a href="https://www.linkedin.com/company/vantsapp" target="_blank" rel="noopener noreferrer"
                 className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-[#6851FF] hover:text-white transition-all">
                 <Linkedin size={16} className="md:w-[18px] md:h-[18px]" />
+              </a>
+              <a href="mailto:hello@vants.xyz" target="_blank" rel="noopener noreferrer"
+                className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-[#6851FF] hover:text-white transition-all">
+                <Mail size={16} className="md:w-[18px] md:h-[18px]" />
               </a>
             </div>
           </div>

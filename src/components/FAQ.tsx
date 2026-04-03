@@ -75,7 +75,7 @@ export const FAQ = () => {
         >
           <p className="text-slate-400 text-sm">
             {f.stillQuestion}{' '}
-            <a href="mailto:hello@vants.xyz" className="text-[#6851FF] font-medium hover:underline underline-offset-4">
+            <a href="https://x.com/vantsapp" target="_blank" rel="noopener noreferrer" className="text-[#6851FF] font-medium hover:underline underline-offset-4">
               {f.talkToUs}
             </a>
           </p>
