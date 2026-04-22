@@ -163,15 +163,15 @@ export const translations = {
       subtitle: 'A team of experienced builders, engineers, and product leaders passionate about making financial access simpler for everyone.',
       members: {
         wlad: {
-          role: "CEO & Tech Lead",
+          role: "CTO",
           bio: "Former Sodexo/Lumx Tech Lead. 10+ years building payment infrastructure in LatAm. Led engineering teams at scale. Multiple Stellar hackathon winner.",
         },
         vhendala: {
           role: "Engineering",
-          bio: "Software Engineer specialized in scalable applications. Previously built infrastructure at OLX Group serving millions of users. 2nd place winner at the Dev Connect 2025 hackathon in Buenos Aires with the Vants project.",
+          bio: "Software Engineer specialized in scalable applications. Previously built infrastructure at OLX Group serving millions of users.",
         },
         pedro: {
-          role: "Product & Partnerships",
+          role: "Founder",
           bio: "Product leader with deep fintech expertise and a long track record building ecosystems in Latin America. VP of Stellar Ambassadors Program in Brazil.",
         }
       }
@@ -375,15 +375,15 @@ export const translations = {
       subtitle: 'Um time de builders experientes, engenheiros e líderes de produto apaixonados por tornar o acesso financeiro mais simples para todos.',
       members: {
         wlad: {
-          role: "CEO & Tech Lead",
+          role: "CTO",
           bio: "Ex-Tech Lead na Sodexo/Lumx. Mais de 10 anos construindo infraestrutura de pagamentos na América Latina. Liderou times de engenharia em larga escala. Múltiplas vezes vencedor de hackathons da Stellar.",
         },
         vhendala: {
-          role: "Engenharia",
-          bio: "Engenheira de Software especializada em aplicações escaláveis. Anteriormente construiu infraestrutura no Grupo OLX servindo milhões de usuários. Vencedora do 2º lugar no hackathon Dev Connect 2025 em Buenos Aires com o projeto Vants.",
+          role: "Engineering",
+          bio: "Engenheira de Software especializada em aplicações escaláveis. Anteriormente construiu infraestrutura no Grupo OLX servindo milhões de usuários.",
         },
         pedro: {
-          role: "Produto e Parcerias",
+          role: "Founder",
           bio: "Líder de produto com profunda experiência em fintechs e longo histórico construindo ecossistemas na América Latina. VP do Programa de Embaixadores da Stellar no Brasil.",
         }
       }
@@ -585,15 +585,15 @@ export const translations = {
       subtitle: 'Un equipo de builders experimentados, ingenieros y líderes de producto apasionados por hacer el acceso financiero más simple para todos.',
       members: {
         wlad: {
-          role: "CEO & Tech Lead",
+          role: "CTO",
           bio: "Ex-Tech Lead en Sodexo/Lumx. Más de 10 años construyendo infraestructura de pagos en América Latina. Lideró equipos de ingeniería a gran escala. Múltiples veces ganador de hackathons de Stellar.",
         },
         vhendala: {
-          role: "Ingeniería",
-          bio: "Ingeniera de software especializada en aplicaciones escalables. Anteriormente construyó infraestructura en OLX Group sirviendo a millones de usuarios. Ganadora del 2º lugar en el hackathon Dev Connect 2025 en Buenos Aires con el proyecto Vants.",
+          role: "Engineering",
+          bio: "Ingeniera de software especializada en aplicaciones escalables. Anteriormente construyó infraestructura en OLX Group sirviendo a millones de usuarios.",
         },
         pedro: {
-          role: "Producto y Alianzas",
+          role: "Founder",
           bio: "Líder de producto con profunda experiencia en fintechs y un largo historial construyendo ecosistemas en América Latina. VP del Programa de Embajadores de Stellar en Brasil.",
         }
       }

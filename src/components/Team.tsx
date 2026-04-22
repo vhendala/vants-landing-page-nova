@@ -7,6 +7,17 @@ export const Team = () => {
 
   const team = [
     {
+      name: "Pedro Pelicioni",
+      role: t.team.members.pedro.role,
+      bio: t.team.members.pedro.bio,
+      initials: "PP",
+      image: "/pedro.jpg",
+      socials: {
+        linkedin: "https://www.linkedin.com/in/pedro-pelicioni/",
+        twitter: "https://x.com/pelicioni_xlm",
+      }
+    },
+    {
       name: "Wlad Mendes",
       role: t.team.members.wlad.role,
       bio: t.team.members.wlad.bio,
@@ -26,17 +37,6 @@ export const Team = () => {
       socials: {
         linkedin: "https://www.linkedin.com/in/vhendala/",
         twitter: "https://x.com/vhendala",
-      }
-    },
-    {
-      name: "Pedro Pelicioni",
-      role: t.team.members.pedro.role,
-      bio: t.team.members.pedro.bio,
-      initials: "PP",
-      image: "/pedro.jpg",
-      socials: {
-        linkedin: "https://www.linkedin.com/in/pedro-pelicioni/",
-        twitter: "https://x.com/pelicioni_xlm",
       }
     }
   ];
