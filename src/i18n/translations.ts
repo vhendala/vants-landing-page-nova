@@ -162,13 +162,13 @@ export const translations = {
       title2: 'Team',
       subtitle: 'A team of experienced builders, engineers, and product leaders passionate about making financial access simpler for everyone.',
       members: {
-        wlad: {
-          role: "CTO",
-          bio: "Former Sodexo/Lumx Tech Lead. 10+ years building payment infrastructure in LatAm. Led engineering teams at scale. Multiple Stellar hackathon winner.",
-        },
         vhendala: {
-          role: "Engineering",
-          bio: "Software Engineer specialized in scalable applications. Previously built infrastructure at OLX Group serving millions of users.",
+          role: "CTO Engineering",
+          bio: "Full-stack software engineer with experience at SAP and OLX, specialized in blockchain, Rust, and Soroban smart contracts. Stellar Development Foundation Ambassador and Stellar House+ DevConnect award winner.",
+        },
+        virginia: {
+          role: "Chief Growth Officer",
+          bio: "Former air traffic controller and CARSAMMA/ICAO specialist, bringing over a decade of risk management and operational precision to Latin American DeFi. Draper Hero Program Brazil award winner.",
         },
         pedro: {
           role: "Founder",
@@ -374,13 +374,13 @@ export const translations = {
       title2: 'Time',
       subtitle: 'Um time de builders experientes, engenheiros e líderes de produto apaixonados por tornar o acesso financeiro mais simples para todos.',
       members: {
-        wlad: {
-          role: "CTO",
-          bio: "Ex-Tech Lead na Sodexo/Lumx. Mais de 10 anos construindo infraestrutura de pagamentos na América Latina. Liderou times de engenharia em larga escala. Múltiplas vezes vencedor de hackathons da Stellar.",
-        },
         vhendala: {
-          role: "Engineering",
-          bio: "Engenheira de Software especializada em aplicações escaláveis. Anteriormente construiu infraestrutura no Grupo OLX servindo milhões de usuários.",
+          role: "CTO Engineering",
+          bio: "Engenheira de software full stack com passagem por SAP e OLX, especializada em blockchain, Rust e smart contracts em Soroban. Embaixadora da Stellar Development Foundation e premiada no Stellar House+ DevConnect.",
+        },
+        virginia: {
+          role: "Chief Growth Officer",
+          bio: "Ex-controladora de tráfego aéreo e especialista CARSAMMA/ICAO, traz mais de uma década de gestão de risco e precisão operacional para o DeFi latino-americano. Premiada pelo Draper Hero Program Brasil.",
         },
         pedro: {
           role: "Founder",
@@ -584,13 +584,13 @@ export const translations = {
       title2: 'Equipo',
       subtitle: 'Un equipo de builders experimentados, ingenieros y líderes de producto apasionados por hacer el acceso financiero más simple para todos.',
       members: {
-        wlad: {
-          role: "CTO",
-          bio: "Ex-Tech Lead en Sodexo/Lumx. Más de 10 años construyendo infraestructura de pagos en América Latina. Lideró equipos de ingeniería a gran escala. Múltiples veces ganador de hackathons de Stellar.",
-        },
         vhendala: {
-          role: "Engineering",
-          bio: "Ingeniera de software especializada en aplicaciones escalables. Anteriormente construyó infraestructura en OLX Group sirviendo a millones de usuarios.",
+          role: "CTO Engineering",
+          bio: "Ingeniera de software full stack con trayectoria en SAP y OLX, especializada en blockchain, Rust y smart contracts en Soroban. Embajadora de la Stellar Development Foundation y premiada en el Stellar House+ DevConnect.",
+        },
+        virginia: {
+          role: "Chief Growth Officer",
+          bio: "Ex controladora de tráfico aéreo y especialista en CARSAMMA/ICAO, aporta más de una década de gestión de riesgos y precisión operativa al DeFi latinoamericano. Premiada por el Draper Hero Program Brasil.",
         },
         pedro: {
           role: "Founder",

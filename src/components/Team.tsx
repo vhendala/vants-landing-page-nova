@@ -18,17 +18,6 @@ export const Team = () => {
       }
     },
     {
-      name: "Wlad Mendes",
-      role: t.team.members.wlad.role,
-      bio: t.team.members.wlad.bio,
-      initials: "WM",
-      image: "/wlad.jpg",
-      socials: {
-        linkedin: "https://www.linkedin.com/in/wlademyr-mendes-925aaa6b/",
-        twitter: "https://x.com/omagowlad",
-      }
-    },
-    {
       name: "Vhendala Tsutsui",
       role: t.team.members.vhendala.role,
       bio: t.team.members.vhendala.bio,
@@ -37,6 +26,16 @@ export const Team = () => {
       socials: {
         linkedin: "https://www.linkedin.com/in/vhendala/",
         twitter: "https://x.com/vhendala",
+      }
+    },
+    {
+      name: "Virginia Mignoni Evaristo",
+      role: t.team.members.virginia.role,
+      bio: t.team.members.virginia.bio,
+      initials: "VE",
+      image: "/virginia.jpg",
+      socials: {
+        linkedin: "https://www.linkedin.com/in/virginia-mignoni-evaristo-78329045/",
       }
     }
   ];
